@@ -43,7 +43,7 @@ class ProductBRepository
     private function fetchRule_One()
     {
         $products['ruleUploadSpeedGreaterThan100'] =    DB::table('products')->select(['id','name','download_speed','upload_speed','is_fibre'])
-      ->where('upload_speed', '<', 100)->get()->toArray();
+      ->where('upload_speed', '>', 100)->get()->toArray();
       
         return $products;
     }

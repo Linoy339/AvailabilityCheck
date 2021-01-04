@@ -45,5 +45,18 @@ class ProductARepository
 
         return $products;
     }
+
+     /**
+      * get all products based on rule
+      *
+      * @return array $products
+      */
+    private function fetchRule_Two()
+    {
+        $products['ruleIsFibre'] =    DB::table('products')->select(['id','name','download_speed','upload_speed','is_fibre'])
+      ->where('is_fibre', '=', 1)->get()->toArray();
+
+        return $products;
+    }
     
 }
